@@ -1,0 +1,91 @@
+<div *ngIf="isLoading; else elseBlock">
+  <div class="auth-loader-container">
+    <app-loader></app-loader>
+  </div>
+</div>
+
+<ng-template #elseBlock>
+  <div class="jumbotron container-fluid">
+  <div class="page-header"><h1>{{movie.title}}</h1></div>
+
+
+  <div id="row-details" class="col-lg-6">
+    <div id="movieDetailsText" class="row">
+      <ul>
+        <li><b>Genre:</b> {{movie.movieDetails.genre}}</li>
+        <li><b>Duration:</b> {{movie.movieDetails.duration}} min</li>
+        <li><b>Synopsis:</b><br> {{movie.movieDetails.sinopsis}}</li>
+      </ul>
+    </div>
+
+    <h3><b>Select screening time</b></h3>
+    <div id="row-sessions" class="row">
+        <button id="screeningButton"
+                *ngFor="let screening of screenings"
+                type="button" class="btn btn-info"
+                data-toggle="modal" data-target="#myModal"
+                (click)="selectScreening(screening)"
+        >
+      <!--(click)="buyTicket(screening)"-->
+          {{screening}}
+        </button>
+    </div>
+  </div>
+    <div class="col-lg-6">
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" [src]='sanitizer.bypassSecurityTrustResourceUrl(trailer)' frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="dialog" id="myModalDialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close" #closeAddModal> <span aria-hidden="true">&times;</span></button>
+          <p class="modal-title" id="myModalLabel"><b>Select tickets</b></p>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-6" id="ticketSelectors">
+              <form #ticketsForm="ngForm" (ngSubmit)="buyTickets()">
+                <div class="form-group">
+                  <label for="typeSelector">Select the type of ticket: </label>
+                  <select class="form-control" id="typeSelector"
+                          [(ngModel)]="selectedTicket.name" name="selectedTicket">
+                    <option [ngValue]=null></option>
+                    <option *ngFor="let ticket of tickets">
+                      {{ticket.name}}
+                    </option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="amountSelector">Select the amount:</label>
+                  <select class="form-control" id="amountSelector"
+                          [(ngModel)]="orderDetail.quantity" name="quantity"
+                          (change)="validAmount=true">
+                    <option *ngFor="let t of ticketList" [value]="t">
+                      {{t}}
+                    </option>
+                  </select>
+                </div>
+                <button type="submit" class="btn btn-success"
+                        *ngIf="validAmount">
+                  Add
+                </button>
+              </form>
+            </div>
+            <div class="col-md-6" id="screeningSummary">
+              <h3>{{movie.title}}</h3>
+              <h3>{{selectedScreening}}</h3>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal" #closeAddModal>Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>

@@ -1,0 +1,12 @@
+<div class="jumbotron container-fluid">
+  <ngx-slick class="carousel" #slickModal="slick-modal" [config]="slideConfig" (afterChange)="afterChange($event)">
+    <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+      <img src="{{ slide.img }}" alt="" width="100%">
+      <p id="name">{{ slide.name }}</p>
+      <p id="price">{{ slide.unitPrice | currency: '€' }}</p>
+      <button type="button" class="btn-success">Add to cart</button>
+    </div>
+  </ngx-slick>
+</div>
+
+

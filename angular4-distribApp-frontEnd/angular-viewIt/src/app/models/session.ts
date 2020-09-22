@@ -1,0 +1,11 @@
+import {User} from './user';
+/*
+*  Este modelo representa una sesión activa.
+*  Esta la utilizaremos para guardar el usuario,
+* una vez logueado correctamente, y el token de autentificación
+* que necesitaremos en un futuro para hacer peticiones al backend.
+* */
+export class Session {
+  public token: string;
+  public user: User;
+}

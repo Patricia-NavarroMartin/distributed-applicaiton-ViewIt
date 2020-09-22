@@ -1,0 +1,14 @@
+.jumbotron{
+  height: fit-content;
+  background-color: rgba(0, 0, 0, 0.51);
+  flex-grow: 1;
+}
+
+.btn{
+  background-color: #1c8d8f;
+}
+
+.slick-slide{
+  display: inline-grid;
+  margin-left: 10px;
+}

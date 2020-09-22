@@ -1,0 +1,47 @@
+@import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
+*{
+  font-family: 'Nunito Sans', sans-serif;
+}
+html, body {
+  color: ghostwhite;
+  height: 100%;
+}
+
+#appRoot {
+  flex-grow: 1;
+
+  display: flex;
+  flex-direction: column;
+}
+
+#pageContent {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  flex-grow: 1;
+  height: 100%;
+  background: url("assets/popcorn2.jpg") no-repeat center;
+}
+
+a {
+  color: ghostwhite;
+  font-size: large;
+}
+
+a:hover {
+  color: #1c8d8f;
+}
+
+.ng-valid[required], .ng-valid.required  {
+  border-left: 5px solid #42A948; /* green */
+}
+
+.ng-invalid:not(form)  {
+  border-left: 5px solid #a94442; /* red */
+}
+
+.form-control {
+  font-size: large;
+  height: fit-content;
+}
+

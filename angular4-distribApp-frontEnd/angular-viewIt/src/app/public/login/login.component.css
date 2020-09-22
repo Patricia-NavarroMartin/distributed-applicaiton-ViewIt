@@ -1,0 +1,34 @@
+.jumbotron{
+  height: fit-content;
+  background-color: rgba(0, 0, 0, 0.51);
+  flex-grow: 1;
+
+  margin:20%;
+}
+
+.form-group{
+  font-size: large;
+}
+
+.text-muted{
+  color: #e4e4eb;
+}
+
+#registerLink{
+  text-align: right;
+  float: right;
+}
+
+.message{
+  font-size: x-large;
+  background-color: #a94442; /* red */
+  padding-left: 2%;
+}
+
+.ng-valid[required], .ng-valid.required  {
+  border-left: 5px solid #42A948; /* green */
+}
+
+.ng-invalid:not(form)  {
+  border-left: 5px solid #a94442; /* red */
+}

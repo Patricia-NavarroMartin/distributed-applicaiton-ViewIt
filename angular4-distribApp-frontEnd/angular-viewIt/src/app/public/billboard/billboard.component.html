@@ -1,0 +1,12 @@
+<div class="jumbotron container-fluid">
+  <h3>Billboard</h3>
+
+  <ngx-slick class="carousel" #slickModal="slick-modal" [config]="slideConfig" (afterChange)="afterChange($event)">
+    <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+      <a [routerLink]="['/movie', slide.id]">
+        <img src="{{ slide.img }}" alt="" width="100%">
+        <p id="name">{{ slide.title }}</p>
+      </a>
+    </div>
+  </ngx-slick>
+</div>

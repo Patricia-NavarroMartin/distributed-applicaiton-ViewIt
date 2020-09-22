@@ -1,0 +1,11 @@
+org\netbeans\rest\application\config\ApplicationConfig.class
+services\UserRest.class
+controllers\BarController.class
+services\OrderRest.class
+services\ScreeningRest.class
+controllers\MoviesController.class
+views\MoviesViews.class
+services\ProductRest.class
+services\MovieRest.class
+filters\CORSfilter.class
+interceptors\LoggerInterceptor.class

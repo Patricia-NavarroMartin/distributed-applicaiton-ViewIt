@@ -1,0 +1,56 @@
+.jumbotron{
+  height: fit-content;
+  background-color: rgba(0, 0, 0, 0.51);
+  flex-grow: 1;
+}
+
+#movieDetailsText{
+  font-size: x-large;
+}
+
+#row-info{
+  height: 330px;
+}
+
+#row-sessions{
+  display: inline-flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+#movieDetailsText{
+  text-align: justify;
+  margin-right: 7%;
+}
+
+.btn{
+  flex-grow: .2;
+  font-size: x-large;
+}
+
+.modal-content{
+  background-color: #444444;
+  font-size: x-large;
+}
+
+#myModal{
+  font-size: xx-large;
+}
+#myModal {
+  text-align: center;
+  padding: 0!important;
+}
+
+#myModal:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -4px;
+}
+#myModalDialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}

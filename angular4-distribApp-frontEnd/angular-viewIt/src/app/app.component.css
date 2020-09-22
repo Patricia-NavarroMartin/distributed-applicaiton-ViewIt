@@ -1,0 +1,13 @@
+* {
+  height: 100%;
+}
+#dynamicContentContainer{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  flex-grow: 1;
+
+  margin: 0;
+}
+

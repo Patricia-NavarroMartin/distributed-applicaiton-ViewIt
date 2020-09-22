@@ -1,0 +1,18 @@
+.jumbotron{
+  height: fit-content;
+  background-color: rgba(0, 0, 0, 0.51);
+  flex-grow: 1;
+}
+
+.edit-button {
+  margin: 1%;
+}
+
+.create-button {
+  display: inline-grid;
+}
+
+.slick-slide{
+  display: inline-grid;
+  margin-left: 10px;
+}
